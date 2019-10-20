@@ -49,13 +49,13 @@ const checking = (email) => new Promise((resolve, reject) => {
         const check = await checking(email);
         if(check.taken === false){
             //console.log(chalk.green(`[LIVE] ${email} ${check.msg}`));
-            console.log(chalk.green(`[LIVE] ${email}`));
+            console.log(chalk.green(`[AVAILABLE] ${email}`));
             const goodlist = await fs.appendFile('notRegistered.txt',`${email}\n`, function (err) {
                 if (err) throw err;
                 console.log('Failed to save list, boss!');});
         }else{
             //console.log(chalk.red(`[BAD] ${email} ${check.msg}`));
-            console.log(chalk.red(`[BAD] ${email}`));
+            console.log(chalk.red(`[TAKEN] ${email}`));
             const badlist = await fs.appendFile('registered.txt',`${email}\n`, function (err) {
                 if (err) throw err;
                 console.log('Failed to save list, boss!');});
