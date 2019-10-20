@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 const fs = require('async-file');
 const readlineSync = require('readline-sync');
 const chalk = require('chalk');
-
 // const email = "erzaganteng@gmail.com";
 const checking = (email) => new Promise((resolve, reject) => {
 
@@ -28,17 +27,12 @@ const checking = (email) => new Promise((resolve, reject) => {
         reject(err)
     })
 });
-
 // checking()
-
-
-
-
 (async () => {
 	console.log(chalk.yellow('Twitter Valid Email Checker'));
     console.log(chalk.yellow('Powered by Easy to Learn'));
     console.log("")
-    const file = await readlineSync.question(chalk.yellow('Input your file: '));
+    const file = await readlineSync.question(chalk.yellow('Input your file (Ex: list.txt) : '));
     
     const akun = await fs.readFile(file, 'utf8');
     let listemail = [];
