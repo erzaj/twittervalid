@@ -38,8 +38,8 @@ const checking = (email) => new Promise((resolve, reject) => {
     let listemail = [];
 	await listemail.push(akun.toString().replace(/\r\n|\r|\n/g, " ").split(" "));
     if(listemail[0].length > 0) {
-        console.log(chalk.yellow('Total checking '+listemail[0].length+' accounts'));
-        console.log(chalk.yellow("Please wait boss, this may take a few minutes..."))
+        console.log(chalk.yellow('Ready to check '+listemail[0].length+' accounts'));
+        console.log(chalk.yellow('This may take a few minutes. Please wait a moment...'))
         console.log("")
 	    for (var i = 0; i < listemail[0].length; i++) {
         
