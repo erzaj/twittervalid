@@ -8,6 +8,8 @@ git clone https://github.com/erzaj/twittervalid/
 
 cd twittervalid
 
+npm install
+
 node valid.js
 
 input your txt file
