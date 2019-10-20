@@ -47,16 +47,19 @@ const checking = (email) => new Promise((resolve, reject) => {
 	    const pecah = akunn.split('|');
 	    const email = pecah[0];
         const check = await checking(email);
-        if(check.taken === true){
-            console.log(chalk.red(`${email} ${check.msg}`));
-            const badlist = await fs.appendFile('registered.txt',`${email}\n`, function (err) {
-                if (err) throw err;
-                console.log('Failed to save list, boss!');});
-        }else{
-            console.log(chalk.green(`${email} ${check.msg}`));
+        if(check.taken === false){
+            //console.log(chalk.green(`[LIVE] ${email} ${check.msg}`));
+            console.log(chalk.green(`[LIVE] ${email}`));
             const goodlist = await fs.appendFile('notRegistered.txt',`${email}\n`, function (err) {
                 if (err) throw err;
                 console.log('Failed to save list, boss!');});
+        }else{
+            //console.log(chalk.red(`[BAD] ${email} ${check.msg}`));
+            console.log(chalk.red(`[BAD] ${email}`));
+            const badlist = await fs.appendFile('registered.txt',`${email}\n`, function (err) {
+                if (err) throw err;
+                console.log('Failed to save list, boss!');});
+            
         }
         
         
