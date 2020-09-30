@@ -29,7 +29,7 @@ const checking = (email) => new Promise((resolve, reject) => {
 });
 // checking()
 (async () => {
-	console.log(chalk.yellow('Twitter Valid Email Checker'));
+	console.log(chalk.yellow('Twitter Valid Email Checker Manteb'));
     console.log(chalk.yellow('Powered by Easy to Learn'));
     console.log("")
     const file = await readlineSync.question(chalk.yellow('Input your file (Ex: list.txt) : '));
