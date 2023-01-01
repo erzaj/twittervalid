@@ -19,7 +19,7 @@ const checking = (email) => new Promise((resolve, reject) => {
             "x-twitter-client-language": "en"
         }
     })
-    ..then(function (res) {
+    .then(function (res) {
   return res.text();
 })
     .then(result => {
